@@ -18,7 +18,7 @@
 |text|text||
 |image|text||
 ### Association
-- belongs_to :groups
+- belongs_to :group
 - belongs_to :user
 
 ## groupテーブル
