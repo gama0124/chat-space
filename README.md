@@ -4,7 +4,7 @@
 |-------|-----|------|
 |email|string|null: false|
 |password|integer|null: false|
-|username|string|null: false|
+|name|string|null: false ,index:true|
 ### Association
 - has_many :groups
 - has_many :comments
@@ -12,40 +12,29 @@
 ## chatテーブル
 |Column |Type|Option|
 |-------|----|------|
-|user_id|integer|null: false|
-|group_id|integer|null: false|
-|text|text|null: false|
+|user_id|references|null: false ,foreign_key:true|
+|group_id|references|null: false ,foreign_key:true|
+|text|text||
 |image|text||
 ### Association
-- has_many :users
-- has_many :groups
+- belongs_to :groups
 - belongs_to :user
 
 ## groupテーブル
 |Column |Type|Option|
 |-------|----|------|
-|groupname|string|null: false|
-|text|text|null: false|
+|name|string|null: false|
 ### Association
 - has_many :chats
 - has_many :users
 
-## group_userテーブル
+## groups_usersテーブル
 |Colum |Type|Option|
 |------|----|------|
-|user_id|integer|null: false|
-|group_id|integer|null: false|
+|user_id|references|null: false ,foreign_key:true|
+|group_id|references|null: false ,foreign_key:true|
 ### Association
 - belongs_to :user
 - belongs_to :group
 
-## commentテーブル
-|Colum |Type|Option|
-|------|----|------|
-|text|text|null: false|
-|user_id|integer|null: false|
-|group_id|integer|null: false|
-### Association
-- belongs_to :user
-- belongs_to :group
 
