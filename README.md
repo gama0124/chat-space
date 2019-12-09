@@ -6,7 +6,8 @@
 |password|integer|null: false|
 |name|string|null: false ,index:true|
 ### Association
-- has_many :groups
+- has_many :groups ,through: :groups_users
+- has_many :groups_users
 - has_many :comments
 
 ## chatテーブル
@@ -25,8 +26,11 @@
 |-------|----|------|
 |name|string|null: false|
 ### Association
+- has_many :users ,through: :groups_users
+- has_many :groups_users
 - has_many :chats
-- has_many :users
+
+
 
 ## groups_usersテーブル
 |Colum |Type|Option|
