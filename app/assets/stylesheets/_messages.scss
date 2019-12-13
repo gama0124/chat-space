@@ -13,8 +13,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-    &__top__box {
+  
+    &__box {
       height: 20px;
       width: 260px;
       display: flex;
@@ -39,7 +39,7 @@
           color: #ffffff;
         }
     }
-
+  }
   &__list {
     background-color: #2f3e51;
     height: calc(100vh - 100px);
