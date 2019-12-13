@@ -1,0 +1,27 @@
+.main-chat
+  .main-chat__index
+    .main-chat__index__left
+      %p.main-chat__index__left__top  test
+      %p.main-chat__index__left__bottom  menber : name
+    .main-chat__index__right 
+      = link_to "#" do
+        Edit
+  .main-chat__massage
+    .main-chat__massage__box
+      .main-chat__massage__box__top
+        %p.main-chat__massage__box__top__comment  masa
+        %p.main-chat__massage__box__top__info  2019/11/20(wed) 17:43:01
+      .main-chat__massage__box__bottom
+        %p.main-chat__massage__box__bottom__data  おはよう
+
+  .main-chat__massage__form
+    .main-chat__massage__form__box
+      .main-chat__massage__form__box__left
+        %p.main-chat__massage__form__box__left__input  type a message
+      %label{class: "main-chat__massage__form__box__left__image"}
+        = icon("fa", "image")
+        %input.display__hidden{type: "file"}
+    %p.main-chat__massage__form__btn  Send
+
+
+
