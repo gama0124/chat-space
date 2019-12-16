@@ -107,7 +107,7 @@
       }
     }    
   }
-  &__massage {
+  &__message {
     background-color: #fafafa;
     height: calc(100vh - 100px - 90px);
     padding-left: 40px;
@@ -129,7 +129,7 @@
           font-size: 12px;
         }
       }
-      &__box__bottom {
+      &__bottom {
       
         &__data {
           color: #434A54;
@@ -139,7 +139,7 @@
     }
   }
     
-  &__massage__form {
+  .new_message {
     background-color: #d2d2d2;
     height: 90px;
     width: calc(100vw - 300px);
@@ -148,28 +148,26 @@
     display: flex;
     &__box {
       background-color: #ffffff;
-      padding: 0 40px 0 10px;
       width: 100%;
       position: relative;
       &__left {
+        padding: 0 40px 0 10px;
+        height: 50px;
         width: 100%;
-        &__input {
-          height: 50px;
-          width: 100%;
-          line-height: 50px;
-          color: #999999;
-          font-size: 16px;
-        }
-      
-        &__image {
-          font-size: 1.3rem;
-          position: absolute;
-          top: 10px;
-          right: 10px ;
-        }
+        line-height: 50px;
+        color: #999999;
+        font-size: 16px;
       }
+      
+      &__image {
+        font-size: 1.3rem;
+        position: absolute;
+        top: 10px;
+        right: 10px ;
+      }
+      
     }
-    &__btn {
+     &__btn {
       width: 100px;
       height: 50px;
       padding: 0 30px;
