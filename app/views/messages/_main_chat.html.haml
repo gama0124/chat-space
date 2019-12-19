@@ -12,13 +12,7 @@
 
   .main-chat__messages
     = render @messages
-  -#     .main-chat__message__box
-  -#       .main-chat__message__box__top
-  -#         %p.main-chat__message__box__top__comment  masa
-  -#         %p.main-chat__message__box__top__info  2019/11/20(wed) 17:43:01
-  -#       .main-chat__message__box__bottom
-  -#         %p.main-chat__message__box__bottom__data  おはよう
-
+  
   .main-chat__message__form
     = form_for [@group, @message] do |f|
       .new_message__box
@@ -28,11 +22,3 @@
           = f.file_field :image, class: 'display__hidden'
       = f.submit 'Send', class: 'new_message__btn'
 
--# .form
--#       = form_for [@group, @message] do |f|
--#         = f.text_field :content, class: 'left__input', placeholder: 'type a message'
--#         .form__mask
--#           = f.label :image, class: 'form__mask__image' do
--#             = icon('fas', 'image', class: 'icon')
--#             = f.file_field :image, class: 'display__hidden'
--#         = f.submit 'Send', class: 'form__submit'
