@@ -78,12 +78,13 @@ $(function(){
     .fail(function(){
       alert('error');
     });
-    // return false;
+     return false;
   });
 
     var reloadMessages = function() {
       if (document.location.href.match(/\/groups\/\d+\/messages/)) {
-        last_message_id = $('.message:last').data("message-id");
+        last_message_id = $('.main-chat__message:last').data("message-id");
+        console.log(last_message_id);
         $.ajax({
           url: "api/messages",
           type: 'get',
@@ -91,15 +92,19 @@ $(function(){
           data: {id: last_message_id}
         })
         .done(function(messages) {
+          if (messages.length !== 0) {
           var insertHTML = '';
           $.each(messages, function(i, message) {
             insertHTML += buildHTML(message)
           });
           $('.main-chat__messages').append(insertHTML);
           $('.main-chat__messages').animate({ scrollTop: $('.main-chat__messages')[0].scrollHeight});
+          $("#new_message")[0].reset();
+          $(".form__submit").prop("disabled", false);
+         }
         })
         .fail(function() {
-          alert('error');
+          console.log('error');
         });
       }
     };
